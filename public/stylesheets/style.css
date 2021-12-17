@@ -1,8 +1,34 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+body > nav {
+  grid-area: nav;
+  background-color: #b6e1ec;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav > img {
+  width: 75px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+  color: white;
+}
+
+.login img {
+  height: 30px;
 }
