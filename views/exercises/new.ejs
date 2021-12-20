@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+<form action="/workouts/<%= workout._id %>/exercises" method="POST">
+    <label>Exercise</label>
+    <input type="text" name="exercise">
+    <br><br>
+    <label>Set Number</label>
+    <input type="number" name="setNum">
+    <br><br>
+    <label>Weight</label>
+    <input type="number" name="weight">
+    <br><br>
+    <label>Reps</label>
+    <input type="number" name="reps">
+    <br><br>
+    <input type="submit" value="Add Set">
+</form>
+
+
+<%- include('../partials/footer') %>

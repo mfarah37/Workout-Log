@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+<form id="new-workout" action="/workouts" method="POST">
+    <label>Date</label>
+    <input type="date" name="date">
+    <label>Muscle Groups</label>
+    <form id="add-muscle" action="/workouts/<%= workout._id %>/muscles" method="POST">
+        <select name="muscleGroups">
+            <%- muscles.map(m =>
+            `<option value="${m._id}">${m.muscles}</option>`
+            ).join('') %>
+        </select>
+    </form>
+    <label>Calories Before Workout:</label>
+    <input type="number" name="calories">
+    <label>How You Felt?</label>
+    <textarea name="content"></textarea>
+    <input type="submit" value="Add Workout">
+</form>
+<br><br>
+<h2><a href="/muscles/new">Add New Muscle Group</a></h2>
+
+<%- include('../partials/footer') %>

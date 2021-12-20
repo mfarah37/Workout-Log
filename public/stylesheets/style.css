@@ -9,16 +9,19 @@ a {
 
 body > nav {
   grid-area: nav;
-  background-color: #b6e1ec;
+  background-color: #aa17e4;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-evenly;
   align-items: center;
+  border: yellow;
+  border-style: outset;
 }
 
-nav > img {
-  width: 75px;
+a > img {
+  width: 50px;
+  align-items: center;
   object-fit: contain;
-  margin-right: auto;
+  justify-content: left;
 }
 
 .login {
@@ -31,4 +34,14 @@ nav > img {
 
 .login img {
   height: 30px;
+}
+
+button {
+  background-color: yellow;
+  border-radius: 20%;
+}
+
+button:hover {
+  transition: 1s ease-in-out;
+  background: #aa17e4;
 }

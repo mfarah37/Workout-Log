@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+<section id="show-page">
+    <h1><%= workout.date %> <%= workout.muscleGroups %></h1>
+    <table>
+    <thead>
+        <tr>
+            <th>Exercise</th>
+            <th>SetNum</th>
+            <th>Weight</th>
+            <th>Reps</th>
+        </tr>
+    </thead> 
+    <tbody> 
+        <% workout.exercise.forEach(function(exercise) { %>
+        <tr>
+            <td><%= exercise.exercise %></td>
+            <td><%= exercise.setNum %></td>
+            <td><%= exercise.weight %></td>
+            <td><%= exercise.reps %></td>
+        </tr>
+        <% }) %>
+    </tbody>  
+    </table>
+</section>
+<br><br>
+<h2><a href="/workouts/<%= workout._id %>/exercises/new">Add Exercise</a></h2>
+<%- include('../partials/footer') %>
