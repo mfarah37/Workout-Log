@@ -1,6 +1,9 @@
 <%- include('../partials/header') %>
 <section id="show-page">
-    <h1><%= workout.date %> <%= workout.muscleGroups %></h1>
+    <h1><%= workout.date %></h1>
+    <br><br>
+    <h1>Type: <%= workout.muscleGroups.muscles %></h1>
+    <h1>Calories: <%= workout.calories %></h1>
     <table>
     <thead>
         <tr>
@@ -24,4 +27,6 @@
 </section>
 <br><br>
 <h2><a href="/workouts/<%= workout._id %>/exercises/new">Add Exercise</a></h2>
+<br><br>
+<h2><a href="/workouts/<%= workout._id %>/edit">Edit Workout</a></h2>
 <%- include('../partials/footer') %>

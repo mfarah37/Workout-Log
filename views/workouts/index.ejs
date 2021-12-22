@@ -4,7 +4,7 @@
         <tr>
             <th>Date</th>
             <th>Type</th>
-            <th>Calories</th>
+            <th>Muscle Group(s)</th>
         </tr>
     </thead>
     <tbody>
@@ -12,8 +12,13 @@
         <tr>
             <td><%= work.date.getDate() %></td>
             <td><%= work.content %></td>
-            <td><%= work.calories %></td>
+            <td><%= work.muscleGroups.muscles %></td>
             <td><a href="/workouts/<%= work._id %>">DETAILS</a></td>
+            <td>
+                <form action="/workouts/<%= work._id %>?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                  </form>
+            </td>
         </tr>
         <% }) %>
     </tbody>

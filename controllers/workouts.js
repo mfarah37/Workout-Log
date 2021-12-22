@@ -5,15 +5,16 @@ module.exports = {
     index,
     new: newWorkout,
     show,
-    create
+    create,
+    deleteWorkout,
+    edit,
+    update 
 }
 
 function index(req, res) {
-    Workout.find({}, function (err, workouts) {
-        res.render('workouts/index', {
-            title: 'Workouts Log',
-            workouts
-        })
+    Workout.find({})
+    .populate('muscleGroups').exec(function (err, workouts) {
+        res.render('workouts/index', { title: 'Workouts Log', workouts })
     })
 }
 
@@ -34,7 +35,27 @@ function create(req, res) {
 }
 
 function show(req, res) {
-    Workout.findById(req.params.workoutId, function (err, workout) {
+    Workout.findById(req.params.workoutId)
+    .populate('muscleGroups').exec(function (err, workout) {
         res.render('workouts/show', { title: 'Workout Details', workout })
+    })
+}
+
+function deleteWorkout(req, res) {
+    Workout.findOneAndDelete(req.params.workoutId, function(err) {
+        res.redirect('/workouts')
+    })
+}
+
+function edit (req, res) {
+    Workout.findById(req.params.workoutId, function(err, workout) {
+        res.render('workouts/edit', { title: 'Edit Workout', workout})
+    })
+}
+
+function update(req, res) {
+    Workout.findByIdAndUpdate(req.params.workoutId, req.body, function(err, workout) {
+        if (err) return res.redirect(`workouts/${workout._id}/edit`)
+        res.redirect(`/workouts/${workout._id}`)
     })
 }

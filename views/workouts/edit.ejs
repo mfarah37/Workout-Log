@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+<form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
+    <p>Date</p>
+    <input type="date" name="date" value="<%= workout.date %>">
+    <br><br>
+    <p>Calories</p>
+    <input type="text" name="calories" value="<%= workout.calories %>">
+    <br><br>
+    <p>How You felt?</p>
+    <textarea name="content"></textarea>
+    <br><br>
+    <button type="submit">Edit Workout</button>
+</form>
+<%- include('../partials/footer') %>

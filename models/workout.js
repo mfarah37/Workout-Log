@@ -22,7 +22,10 @@ const exerciseSchema = {
     }
 }
 const workoutSchema = new Schema({
-    date: {type: Date},
+    date: {
+        type: Date,
+        required: true
+    },
     muscleGroups: {type: Schema.Types.ObjectId, ref:'Muscle'},
     exercise: [exerciseSchema],
     calories: {
