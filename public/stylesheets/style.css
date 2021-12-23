@@ -1,47 +1,67 @@
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: white;
+  text-align: center;
+}
+
 body {
+  /* display: flex;
+  flex-direction: column; */
+  background-color: black;
   padding: 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: white;
 }
 
 body > nav {
-  grid-area: nav;
-  background-color: #aa17e4;
+  background-color: #383636f1;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-  border: yellow;
+  border: black;
   border-style: outset;
 }
 
 a > img {
-  width: 50px;
-  align-items: center;
-  object-fit: contain;
-  justify-content: left;
+  width: 70px;
+  margin-left: 0 auto;
 }
-
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
-  color: white;
-}
-
-.login img {
-  height: 30px;
-}
-
-button {
+.log {
+  color: black;
+  align-self: right;
   background-color: yellow;
   border-radius: 20%;
+}
+.index-page {
+  border-color: white;
+  border: solid;
+}
+
+input, select, textarea {
+  color: black;
 }
 
 button:hover {
   transition: 1s ease-in-out;
-  background: #aa17e4;
+  background: #ffffff;
+}
+
+table {
+  border: solid white;
+  margin: 0 auto;
+  height: 300px;
+  width: 700px;
+}
+
+th, td {
+  border: solid white; 
+  border-width: 1px;
+}
+
+.submit {
+  color: black;
 }

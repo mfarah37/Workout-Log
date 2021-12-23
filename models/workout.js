@@ -32,7 +32,10 @@ const workoutSchema = new Schema({
         type: Number,
         min: 0
     },
-    content: {type: String}
+    content: {type: String},
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
+    userName: String,
+    userAvatar: String
 })
 
 module.exports = mongoose.model('Workout', workoutSchema)

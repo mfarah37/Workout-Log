@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Workout Log</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
     <nav>
         <a href="/">
-            <img src="/images/gym-ape.png">
+            <img src="/images/dumbbell.png">
         </a>    
+        <% if (user) { %>
         <a href="/workouts" <%- title === 'Workouts Log' ? 'class="active"' : '' %>>Workout Log</a>
         <a href="/workouts/new" <%- title === 'Add Workout' ? 'class="active"' : '' %>>Add Workout</a>
-        <% if (user) { %>
-            <a href="/logout"><button>LOG OUT</button></a>
+            <a href="/logout"><button class="log">LOG OUT</button></a>
         <% } else { %>
-            <a href="/auth/google" class="login"><button>LOG IN&nbsp;</button></a>
+            <a href="/auth/google" class="login"><button class="log">LOG IN&nbsp;</button></a>
         <% } %>
     </nav>   
     <h1><%= title %></h1>

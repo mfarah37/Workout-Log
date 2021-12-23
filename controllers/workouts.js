@@ -28,6 +28,9 @@ function newWorkout(req, res) {
 
 function create(req, res) {
     const workout = new Workout(req.body)
+    workout.user = req.user._id
+    workout.userName = req.user.name 
+    workout.userAvatar = req.user.avatar 
     workout.save(function (err) {
         if (err) return res.redirect('/workouts/new')
         res.redirect(`/workouts/${workout._id}`)
@@ -42,7 +45,7 @@ function show(req, res) {
 }
 
 function deleteWorkout(req, res) {
-    Workout.findOneAndDelete(req.params.workoutId, function(err) {
+    Workout.findByIdAndDelete(req.params.workoutId, req.body, function(err, workout) {
         res.redirect('/workouts')
     })
 }

@@ -3,12 +3,13 @@
     <thead>
         <tr>
             <th>Date</th>
-            <th>Type</th>
+            <th>How It Went?</th>
             <th>Muscle Group(s)</th>
         </tr>
     </thead>
     <tbody>
         <% workouts.forEach(function(work) { %>
+            <% if (user && user._id.equals(work.user)) { %>
         <tr>
             <td><%= work.date.getDate() %></td>
             <td><%= work.content %></td>
@@ -16,10 +17,11 @@
             <td><a href="/workouts/<%= work._id %>">DETAILS</a></td>
             <td>
                 <form action="/workouts/<%= work._id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
+                    <button class="submit" type="submit">X</button>
                   </form>
             </td>
         </tr>
+        <% } %> 
         <% }) %>
     </tbody>
 </table>
